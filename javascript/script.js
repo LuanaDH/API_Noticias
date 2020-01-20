@@ -7,7 +7,7 @@
 let buttonClick = document.getElementById('btn')
 let board = document.getElementById('board')
 
-buttonClick.addEventListener('click', ()=>{
+buttonClick.addEventListener('click', ()=>{ //colocar o assync antes do () só da ultima forma
     //fetch, vai na url, e depois que pegar as informações me de a resposta
 
     //*MESMA FORMA DE ESCREVER, DE FORMA MAIS RESUMIDA*/
@@ -22,6 +22,11 @@ buttonClick.addEventListener('click', ()=>{
         console.log(json.articles)
         mostrarNaTela(json.articles)
     })
+
+    // let listaNoticias = (await fetch("https://newsapi.org/v2/top-headlines?country=br&apiKey=ab80e0c0aa994bdc92fc31fe37d170d0")).json()
+
+    // console.log(listaNoticias)
+
 })
 
 let mostrarNaTela = listaNoticias =>{
@@ -40,7 +45,7 @@ let mostrarNaTela = listaNoticias =>{
     </div>`
 
     board.innerHTML = board.innerHTML + card
-    
+
     })
 }
 
